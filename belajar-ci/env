@@ -14,7 +14,7 @@
 # ENVIRONMENT
 #--------------------------------------------------------------------
 
-CI_ENVIRONMENT = delovelopment
+CI_ENVIRONMENT = devolepment
 
 #--------------------------------------------------------------------
 # APP
@@ -30,13 +30,13 @@ CI_ENVIRONMENT = delovelopment
 # DATABASE
 #--------------------------------------------------------------------
 
-# database.default.hostname = localhost
-# database.default.database = rental_mobil
-# database.default.username = root
-# database.default.password = 
-# database.default.DBDriver = MySQLi
-# database.default.DBPrefix =
-# database.default.port = 3306
+ database.default.hostname = localhost
+ database.default.database = rental_mobil
+ database.default.username = root
+ database.default.password = 
+ database.default.DBDriver = MySQLi
+ database.default.DBPrefix =
+ database.default.port = 3306
 
 # If you use MySQLi as tests, first update the values of Config\Database::$tests.
 # database.tests.hostname = localhost
