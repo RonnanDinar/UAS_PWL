@@ -22,6 +22,13 @@ class MobilSeeder extends Seeder
             'nopol' => 'B 5678 XYZ',
             'harga_sewa' => 330000,
             'status' => 'tersedia',
+        ],
+        [
+            'nama_mobil' => 'civic type r',
+            'merk' => 'Honda',
+            'nopol' => 'B 6 XH',
+            'harga_sewa' => 6000000,
+            'status' => 'tersedia',
         ]
     ];
 
