@@ -11,16 +11,16 @@ class MobilSeeder extends Seeder
     $data = [
         [
             'nama_mobil' => 'Avanza',
-            'merek' => 'Toyota',
+            'merk' => 'Toyota',
             'nopol' => 'B 1234 ABC',
-            'harga' => 350000,
+            'harga_sewa' => 350000,
             'status' => 'tersedia',
         ],
         [
             'nama_mobil' => 'Xenia',
-            'merek' => 'Daihatsu',
+            'merk' => 'Daihatsu',
             'nopol' => 'B 5678 XYZ',
-            'harga' => 330000,
+            'harga_sewa' => 330000,
             'status' => 'tersedia',
         ]
     ];

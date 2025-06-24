@@ -7,23 +7,19 @@ use CodeIgniter\Database\Seeder;
 class UserSeeder extends Seeder
 {
     public function run()
-{
-    $data = [
-        [
-            'nama' => 'Admin Rental',
-            'email' => 'admin@rental.com',
-            'password' => password_hash('admin123', PASSWORD_DEFAULT),
-            'role' => 'admin',
-        ],
-        [
-            'nama' => 'User Biasa',
-            'email' => 'user@rental.com',
-            'password' => password_hash('user123', PASSWORD_DEFAULT),
-            'role' => 'user',
-        ],
-    ];
+    {
+        $faker = \Faker\Factory::create('id_ID');
 
-    $this->db->table('users')->insertBatch($data);
-}
-
+        for ($i = 0; $i < 10; $i++) {
+            $data = [
+                'nama' => $faker->userName,
+                'email' => $faker->email,
+                'password' => password_hash('1234567', PASSWORD_DEFAULT),
+                'role' => $faker->randomElement(['admin', 'guest']),
+                'created_at' => date("Y-m-d H:i:s"),
+            ];
+            
+            $this->db->table('users')->insert($data);
+        }
+    }
 }

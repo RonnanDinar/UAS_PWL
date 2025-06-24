@@ -36,7 +36,7 @@
                         <button type="submit" class="btn btn-primary w-100">Masuk</button>
                     </form>
                     <div class="mt-3 text-center">
-                        <a href="<?= base_url('/register') ?>">Belum punya akun? Daftar sekarang</a>
+                        <a href="<?= base_url('auth/register') ?>">Belum punya akun? Daftar sekarang</a>
                     </div>
                 </div>
             </div>
