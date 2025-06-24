@@ -24,7 +24,7 @@
                     <?php if(session()->getFlashdata('error')): ?>
                         <div class="alert alert-danger"><?= session()->getFlashdata('error') ?></div>
                     <?php endif; ?>
-                    <form method="post" action="<?= base_url('/register') ?>">
+                    <form action="<?= base_url('auth/registerSave') ?>" method="post">
                         <div class="mb-3">
                             <label for="nama" class="form-label">Nama Lengkap</label>
                             <input type="text" class="form-control" name="nama" required>
