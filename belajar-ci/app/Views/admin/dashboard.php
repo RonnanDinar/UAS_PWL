@@ -1,13 +1,20 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>Dashboard Admin</title>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <title><?= esc($title ?? 'Rental Mobil') ?></title>
+    <link 
+        href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" 
+        rel="stylesheet"
+    >
 </head>
 <body>
+<?php $role = session('role') ?? 'user'; ?>
+
 <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
     <div class="container-fluid">
-        <a class="navbar-brand" href="#">Rental Mobil - Admin</a>
+        <a class="navbar-brand">
+            Rental Mobil - <?= $role === 'admin' ? 'Admin' : 'User' ?>
+        </a>
         <div class="d-flex">
             <a href="/logout" class="btn btn-outline-light">Logout</a>
         </div>
@@ -15,7 +22,7 @@
 </nav>
 
 <div class="container mt-4">
-    <h3>Selamat Datang, Admin <?= session()->get('nama') ?></h3>
+    <h3>Selamat Datang, <?= esc(session('nama') ?? 'Pengguna') ?></h3>
     <div class="row mt-4">
         <div class="col-md-4">
             <div class="card border-primary">
