@@ -66,8 +66,6 @@ public function registerSave()
     'email'    => $this->request->getVar('email'),
     'password' => password_hash($this->request->getVar('password'), PASSWORD_DEFAULT),
     'role'     => 'guest'
-
-    
 ];
 
 $userModel = new \App\Models\UserModel();

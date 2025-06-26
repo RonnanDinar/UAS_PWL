@@ -13,6 +13,10 @@ $routes->post('auth/registerSave', 'Auth::registerSave');
 $routes->get('/logout', 'Auth::logout');
 
 $routes->get('/mobil', 'Mobil::index');
+$routes->get('mobil/sewa/(:num)', 'Mobil::sewa/$1');
+$routes->post('mobil/sewa/submit', 'Mobil::submitSewa');
+$routes->post('/mobil/sewa/submit', 'Mobil::submitSewa');
+
 
 $routes->get('/admin', 'Admin::index');
 $routes->get('/user', 'User::index');

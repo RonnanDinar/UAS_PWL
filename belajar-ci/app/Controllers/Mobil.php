@@ -15,4 +15,38 @@ class Mobil extends BaseController
 
         return view('mobil/index', $data);
     }
+    public function sewa($id)
+{
+    $mobilModel = new \App\Models\MobilModel();
+    $mobil = $mobilModel->find($id);
+
+    if (!$mobil) {
+        return redirect()->to('/mobil')->with('error', 'Mobil tidak ditemukan.');
+    }
+
+    return view('mobil/sewa_form', ['mobil' => $mobil]);
+}
+
+    public function submitSewa()
+{
+    $rentalModel = new \App\Models\RentalModel();
+    $mobilModel = new \App\Models\MobilModel();
+
+    $data = [
+        'mobil_id'        => $this->request->getPost('mobil_id'),
+        'nama_penyewa'    => $this->request->getPost('nama_penyewa'),
+        'tanggal_sewa'    => $this->request->getPost('tanggal_sewa'),
+        'tanggal_kembali' => $this->request->getPost('tanggal_kembali'),
+        'status'          => 'disewa'
+    ];
+
+    $rentalModel->insert($data);
+
+    // Update status mobil ke 'disewa'
+    $mobilModel->update($data['mobil_id'], ['status' => 'disewa']);
+
+    return redirect()->to('/mobil')->with('success', 'Sewa berhasil disimpan dan mobil disembunyikan.');
+}
+
+
 }

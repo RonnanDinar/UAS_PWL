@@ -6,6 +6,7 @@
 
     <div class="row">
     <?php foreach ($mobil as $m): ?>
+        <?php if ($m['status'] === 'tersedia'): ?>
         <div class="col-md-4 mb-4">
             <div class="card shadow-sm h-100">
                 <?php
@@ -24,6 +25,7 @@
                 </div>
             </div>
         </div>
+        <?php endif; ?>
     <?php endforeach; ?>
 </div>
 

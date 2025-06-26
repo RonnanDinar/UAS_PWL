@@ -1,12 +1,23 @@
 <?php
+
 namespace App\Controllers;
 
-use CodeIgniter\Controller;
+use App\Controllers\BaseController;
+use App\Models\MobilModel;
+use App\Models\RentalModel;
 
-class User extends Controller
+class User extends BaseController
 {
     public function index()
     {
-        return view('user/dashboard');
+        $mobilModel = new MobilModel();
+        $rentalModel = new RentalModel();
+
+        $data = [
+            'mobilTersedia'   => $mobilModel->where('status', 'tersedia')->countAllResults(),
+            'penyewaanAktif'  => $rentalModel->where('status', 'disewa')->countAllResults(),
+        ];
+
+        return view('user/dashboard', $data);
     }
 }

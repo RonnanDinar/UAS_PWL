@@ -11,43 +11,36 @@ class Mobil extends Migration
         $this->forge->addField([
             'id' => [
                 'type'           => 'INT',
-                'constraint'     => 11,
+                'constraint'     => 5,
                 'unsigned'       => true,
                 'auto_increment' => true,
             ],
             'nama_mobil' => [
                 'type'       => 'VARCHAR',
                 'constraint' => 100,
-                'null'       => true,
             ],
             'merk' => [
                 'type'       => 'VARCHAR',
-                'constraint' => 50,
-                'null'       => true,
+                'constraint' => 100,
             ],
             'nopol' => [
                 'type'       => 'VARCHAR',
-                'constraint' => 60,
-                'null'       => true,
+                'constraint' => 50,
             ],
             'harga_sewa' => [
-                'type'       => 'DECIMAL',
-                'constraint' => '10,2',
-                'null'       => true,
+                'type' => 'INT',
             ],
             'status' => [
-                'type'       => 'ENUM',
-                'constraint' => ['tersedia', 'disewa'],
+                'type'       => 'VARCHAR',
+                'constraint' => 20,
                 'default'    => 'tersedia',
-                'null'       => true,
             ],
             'gambar' => [
                 'type'       => 'VARCHAR',
-                'constraint' => 100,
+                'constraint' => 255,
                 'null'       => true,
             ],
         ]);
-
         $this->forge->addKey('id', true);
         $this->forge->createTable('mobil');
     }
