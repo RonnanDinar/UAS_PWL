@@ -26,6 +26,18 @@ class Mobil extends BaseController
 
     return view('mobil/sewa_form', ['mobil' => $mobil]);
 }
+   public function admin()
+{
+    if (session('role') !== 'admin') {
+        return redirect()->to('/dashboard'); // Redirect kalau bukan admin
+    }
+
+    $mobilModel = new \App\Models\MobilModel();
+    $data['mobil'] = $mobilModel->findAll();
+    $data['title'] = 'Daftar Semua Mobil';
+
+    return view('mobil/admin_index', $data); // tampilan daftar mobil
+}
 
     public function submitSewa()
 {

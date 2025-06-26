@@ -17,6 +17,7 @@ $routes->get('mobil/sewa/(:num)', 'Mobil::sewa/$1');
 $routes->post('mobil/sewa/submit', 'Mobil::submitSewa');
 $routes->post('/mobil/sewa/submit', 'Mobil::submitSewa');
 
+$routes->get('/admin/mobil', 'Mobil::admin');
 
 $routes->get('/admin', 'Admin::index');
 $routes->get('/user', 'User::index');

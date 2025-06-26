@@ -10,15 +10,15 @@ class Admin extends BaseController
 {
     public function index()
     {
-        $mobilModel = new MobilModel();
-        $userModel = new UserModel();
-        $rentalModel = new RentalModel();
+        $mobilModel   = new MobilModel();
+        $userModel    = new UserModel();
+        $rentalModel  = new RentalModel();
 
         $data = [
-            'title'              => 'Admin Dashboard',
-            'total_mobil'        => $mobilModel->where('status', 'tersedia')->countAllResults(), // 👈 filter mobil tersedia
-            'total_user'         => $userModel->countAll(),
-            'total_penyewaan'    => $rentalModel->countAll()
+            'title'             => 'Admin Dashboard',
+            'total_mobil'       => $mobilModel->where('status', 'tersedia')->countAllResults(),
+            'total_user'        => $userModel->countAll(),
+            'total_penyewaan'   => $rentalModel->countAll()
         ];
 
         return view('admin/dashboard', $data);
