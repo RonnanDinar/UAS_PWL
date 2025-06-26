@@ -5,15 +5,9 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
 </head>
 <body>
-<nav class="navbar navbar-expand-lg navbar-dark bg-primary">
-    <div class="container-fluid">
-        <a class="navbar-brand" href="#">Rental Mobil - User</a>
-        <div class="d-flex">
-            <a href="/logout" class="btn btn-outline-light">Logout</a>
-        </div>
-    </div>
-</nav>
 
+<?= view('layout/header') ?>
+<?= view('layout/sidebar') ?>
 <div class="container mt-4">
     <h3>Halo, <?= session()->get('nama') ?>!</h3>
     <p>Selamat datang di layanan rental mobil online kami.</p>
@@ -37,5 +31,8 @@
         </div>
     </div>
 </div>
+    <?= view('layout/footer') ?>
+
 </body>
 </html>
+

@@ -12,5 +12,7 @@ $routes->get('auth/register', 'Auth::register');
 $routes->post('auth/registerSave', 'Auth::registerSave');
 $routes->get('/logout', 'Auth::logout');
 
+$routes->get('/mobil', 'Mobil::index');
+
 $routes->get('/admin', 'Admin::index');
 $routes->get('/user', 'User::index');

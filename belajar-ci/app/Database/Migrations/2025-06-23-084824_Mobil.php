@@ -41,6 +41,11 @@ class Mobil extends Migration
                 'default'    => 'tersedia',
                 'null'       => true,
             ],
+            'gambar' => [
+                'type'       => 'VARCHAR',
+                'constraint' => 100,
+                'null'       => true,
+            ],
         ]);
 
         $this->forge->addKey('id', true);
