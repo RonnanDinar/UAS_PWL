@@ -9,15 +9,18 @@ use App\Models\RentalModel;
 class User extends BaseController
 {
     public function index()
-    {
-        $mobilModel = new MobilModel();
-        $rentalModel = new RentalModel();
+{
+    $mobilModel  = new MobilModel();
+    $rentalModel = new RentalModel();
 
-        $data = [
-            'mobilTersedia'   => $mobilModel->where('status', 'tersedia')->countAllResults(),
-            'penyewaanAktif'  => $rentalModel->where('status', 'disewa')->countAllResults(),
-        ];
+    $user_id = session()->get('user_id'); // ambil dari session
 
-        return view('user/dashboard', $data);
-    }
+    $data = [
+        'mobilTersedia'  => $mobilModel->where('status', 'tersedia')->countAllResults(),
+        'penyewaanAktif' => $rentalModel->where('user_id', $user_id)->countAllResults(), // total semua sewa oleh user ini
+    ];
+
+    return view('user/dashboard', $data);
+}
+
 }
