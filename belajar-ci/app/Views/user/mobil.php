@@ -11,7 +11,7 @@
                 <div class="card shadow-sm h-100">
                     <?php
                         // Gunakan foto mobil jika ada, jika tidak pakai default.jpg
-                        $gambar = !empty($m['foto']) ? $m['foto'] : 'default.jpg';
+                        $gambar = $m['gambar'] ?? 'default.jpg';
                     ?>
                     <img src="<?= base_url('uploads/mobil/' . $gambar) ?>"
                          class="card-img-top"

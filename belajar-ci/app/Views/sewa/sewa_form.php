@@ -37,7 +37,7 @@
         <!-- INFORMASI MOBIL -->
         <div class="col-md-6">
             <div class="card shadow-sm">
-                <img src="<?= base_url('uploads/mobil/' . (!empty($mobil['foto']) ? $mobil['foto'] : 'default.jpg')) ?>"
+                <img src="<?= base_url('uploads/mobil/' . ($mobil['gambar'] ?? 'default.jpg')) ?>"
                      class="card-img-top"
                      alt="<?= esc($mobil['nama_mobil']) ?>"
                      style="height: 250px; object-fit: cover;">

@@ -20,10 +20,11 @@ class Penyewa extends Migration
                 'constraint' => 11,
                 'unsigned'   => true,
             ],
-            'nama_penyewa' => [
-                'type'       => 'VARCHAR',
-                'constraint' => 100,
-                'null'       => false,
+            'user_id' => [
+                'type'       => 'INT',
+                'constraint' => 11,
+                'unsigned'   => true,
+                'null'       => true,
             ],
             'tanggal_sewa' => [
                 'type' => 'DATE',
@@ -35,7 +36,7 @@ class Penyewa extends Migration
             ],
             'status' => [
                 'type'       => 'ENUM',
-                'constraint' => ['disewa', 'selesai'],
+                'constraint' => ['diproses', 'disewa', 'selesai'],
                 'default'    => 'disewa',
                 'null'       => false,
             ],
