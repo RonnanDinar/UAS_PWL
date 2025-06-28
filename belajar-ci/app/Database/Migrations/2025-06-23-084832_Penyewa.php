@@ -15,13 +15,12 @@ class Penyewa extends Migration
                 'unsigned'       => true,
                 'auto_increment' => true,
             ],
-            'user_id' => [
+            'mobil_id' => [
                 'type'       => 'INT',
                 'constraint' => 11,
                 'unsigned'   => true,
-                'null'       => true,
             ],
-            'mobil_id' => [
+            'user_id' => [
                 'type'       => 'INT',
                 'constraint' => 11,
                 'unsigned'   => true,
@@ -29,17 +28,17 @@ class Penyewa extends Migration
             ],
             'tanggal_sewa' => [
                 'type' => 'DATE',
-                'null' => true,
+                'null' => false,
             ],
             'tanggal_kembali' => [
                 'type' => 'DATE',
-                'null' => true,
+                'null' => false,
             ],
             'status' => [
                 'type'       => 'ENUM',
-                'constraint' => ['diproses', 'selesai'],
-                'default'    => 'diproses',
-                'null'       => true,
+                'constraint' => ['diproses', 'disewa', 'selesai'],
+                'default'    => 'disewa',
+                'null'       => false,
             ],
         ]);
 
