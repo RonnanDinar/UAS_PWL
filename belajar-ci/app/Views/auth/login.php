@@ -26,7 +26,7 @@
                     <?php endif; ?>
                     <form method="post" action="<?= base_url('/login') ?>">
                         <div class="mb-3">
-                            <label for="email" class="form-label">Email/Username</label>
+                            <label for="email" class="form-label">Email</label>
                             <input type="text" class="form-control" name="email" required>
                         </div>
                         <div class="mb-3">

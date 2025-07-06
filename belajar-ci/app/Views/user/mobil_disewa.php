@@ -13,7 +13,7 @@
         <?php foreach ($mobil_disewa as $m): ?>
         <div class="col-md-4 mb-4">
             <div class="card shadow-sm h-100">
-                <img src="<?= base_url('uploads/mobil/' . ($m['gambar'] ?? 'default.jpg')) ?>"
+                <img src="<?= base_url('uploads/mobil/' . ($m['foto'] ?? 'default.jpg')) ?>"
                      class="card-img-top"
                      alt="<?= esc($m['nama_mobil']) ?>"
                      style="height: 200px; object-fit: cover;">
@@ -61,7 +61,7 @@
                 <tr>
                     <td><?= $no++ ?></td>
                     <td>
-                        <img src="<?= base_url('uploads/mobil/' . ($r['gambar'] ?? 'default.jpg')) ?>"
+                        <img src="<?= base_url('uploads/mobil/' . ($r['foto'] ?? 'default.jpg')) ?>"
                              width="80" class="img-thumbnail">
                     </td>
                     <td><?= esc($r['nama_mobil']) ?></td>

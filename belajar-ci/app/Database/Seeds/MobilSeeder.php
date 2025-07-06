@@ -15,7 +15,7 @@ class MobilSeeder extends Seeder
                 'nopol'      => 'B 1234 ABC',
                 'harga_sewa' => 350000,
                 'status'     => 'tersedia',
-                'gambar'     => 'avanza.jpeg',
+                'foto'     => 'avanza.jpeg',
             ],
             [
                 'nama_mobil' => 'Xenia',
@@ -23,7 +23,7 @@ class MobilSeeder extends Seeder
                 'nopol'      => 'B 5678 XYZ',
                 'harga_sewa' => 330000,
                 'status'     => 'tersedia',
-                'gambar'     => 'xenia.jpeg',
+                'foto'     => 'xenia.jpeg',
             ],
             [
                 'nama_mobil' => 'Civic Type R',
@@ -31,7 +31,7 @@ class MobilSeeder extends Seeder
                 'nopol'      => 'B 6 XH',
                 'harga_sewa' => 6000000,
                 'status'     => 'tersedia',
-                'gambar'     => 'civic.jpeg',
+                'foto'     => 'civic.jpeg',
             ],
         ];
 

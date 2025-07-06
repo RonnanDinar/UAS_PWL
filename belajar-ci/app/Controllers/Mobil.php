@@ -81,7 +81,7 @@ public function store()
 {
     $mobilModel = new MobilModel();
 
-    $file = $this->request->getFile('gambar');
+    $file = $this->request->getFile('foto');
     $fotoName = null;
 
     if ($file && $file->isValid() && !$file->hasMoved()) {
@@ -95,7 +95,7 @@ public function store()
         'nopol'      => $this->request->getPost('nopol'),
         'harga_sewa' => $this->request->getPost('harga_sewa'),
         'status'     => $this->request->getPost('status'),
-        'gambar'       => $fotoName // PENTING: disimpan ke DB!
+        'foto'       => $fotoName // PENTING: disimpan ke DB!
     ];
 
     $mobilModel->insert($data);
@@ -124,16 +124,16 @@ public function update($id)
     $mobilModel = new MobilModel();
     $mobilLama = $mobilModel->find($id);
 
-    $file = $this->request->getFile('gambar');
-    $fotoName = $mobilLama['gambar']; // default: pakai yang lama
+    $file = $this->request->getFile('foto');
+    $fotoName = $mobilLama['foto']; // default: pakai yang lama
 
     if ($file && $file->isValid() && !$file->hasMoved()) {
         $fotoName = $file->getRandomName();
         $file->move('uploads/mobil/', $fotoName);
 
         // Hapus foto lama jika ada
-        if (!empty($mobilLama['gambar']) && file_exists('uploads/mobil/' . $mobilLama['gambar'])) {
-            unlink('uploads/mobil/' . $mobilLama['gambar']);
+        if (!empty($mobilLama['foto']) && file_exists('uploads/mobil/' . $mobilLama['foto'])) {
+            unlink('uploads/mobil/' . $mobilLama['foto']);
         }
     }
 
@@ -143,7 +143,7 @@ public function update($id)
         'nopol'      => $this->request->getPost('nopol'),
         'harga_sewa' => $this->request->getPost('harga_sewa'),
         'status'     => $this->request->getPost('status'),
-        'gambar'       => $fotoName
+        'foto'       => $fotoName
     ];
 
     $mobilModel->update($id, $data);
@@ -172,14 +172,14 @@ public function disewa()
     $user_id = session()->get('user_id');
 
     $data['mobil_disewa'] = $rentalModel
-        ->select('rental.*, mobil.nama_mobil, mobil.merk, mobil.nopol, mobil.harga_sewa, mobil.gambar')
+        ->select('rental.*, mobil.nama_mobil, mobil.merk, mobil.nopol, mobil.harga_sewa, mobil.foto')
         ->join('mobil', 'mobil.id = rental.mobil_id')
         ->where('rental.status', 'diproses') // Sesuaikan dengan isi enum
         ->where('rental.user_id', $user_id)
         ->findAll();
 
     $data['riwayat'] = $rentalModel
-        ->select('rental.*, mobil.nama_mobil, mobil.merk, mobil.nopol, mobil.harga_sewa, mobil.gambar')
+        ->select('rental.*, mobil.nama_mobil, mobil.merk, mobil.nopol, mobil.harga_sewa, mobil.foto')
         ->join('mobil', 'mobil.id = rental.mobil_id')
         ->where('rental.status', 'selesai')
         ->where('rental.user_id', $user_id)
