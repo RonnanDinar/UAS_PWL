@@ -44,5 +44,8 @@ $routes->get('admin/user/delete/(:num)', 'Admin::hapusUser/$1');
 
 $routes->get('admin/penyewaan/nota/(:num)', 'Admin::notaPenyewaan/$1');
 
+$routes->get('api/rental', 'ApiController::index');
+
+
 
 
