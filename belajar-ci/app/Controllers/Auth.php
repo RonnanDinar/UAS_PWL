@@ -55,21 +55,21 @@ public function register()
 public function registerSave()
 {
     $rules = [
-    'nama' => 'required|min_length[6]',
-    'email' => 'required|valid_email',
-    'password' => 'required|min_length[6]',
+        'nama'     => 'required|min_length[3]',
+        'email'    => 'required|valid_email',
+        'password' => 'required|min_length[6]',
     ];
 
-     if ($this->validate($rules)) {
-     $data = [
-    'nama'     => $this->request->getVar('nama'),
-    'email'    => $this->request->getVar('email'),
-    'password' => password_hash($this->request->getVar('password'), PASSWORD_DEFAULT),
-    'role'     => 'guest'
-];
+    if ($this->validate($rules)) {
+        $data = [
+            'nama'     => $this->request->getVar('nama'),
+            'email'    => $this->request->getVar('email'),
+            'password' => password_hash($this->request->getVar('password'), PASSWORD_DEFAULT),
+            'role'     => 'guest'
+        ];
 
-$userModel = new \App\Models\UserModel();
-$userModel->save($data);
+        $userModel = new \App\Models\UserModel();
+        $userModel->save($data);
 
         session()->setFlashdata('success', 'Registrasi berhasil. Silakan login.');
         return redirect()->to('/login');

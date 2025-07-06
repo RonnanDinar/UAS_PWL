@@ -36,10 +36,10 @@
 
             <div class="mb-3">
                 <label for="foto" class="form-label">Foto Mobil</label>
-                <input type="file" class="form-control" id="gambar" name="gambar" accept="image/*">
-                <?php if (isset($mobil['gambar']) && $mobil['gambar']): ?>
+                <input type="file" class="form-control" id="foto" name="foto" accept="image/*">
+                <?php if (isset($mobil['foto']) && $mobil['foto']): ?>
                     <div class="mt-2">
-                        <img src="<?= base_url('uploads/mobil/' . $mobil['gambar']) ?>" alt="Foto Mobil"
+                        <img src="<?= base_url('uploads/mobil/' . $mobil['foto']) ?>" alt="Foto Mobil"
                              class="img-thumbnail" style="max-height: 200px;">
                     </div>
                 <?php endif; ?>

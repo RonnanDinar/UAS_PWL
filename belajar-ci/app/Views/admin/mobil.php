@@ -27,8 +27,8 @@
             <tr>
                 <td><?= $no++ ?></td>
                 <td>
-                    <?php if (!empty($m['gambar'])): ?>
-                        <img src="<?= base_url('uploads/mobil/' . $m['gambar']) ?>" alt="Foto" width="80" class="img-thumbnail">
+                    <?php if (!empty($m['foto'])): ?>
+                        <img src="<?= base_url('uploads/mobil/' . $m['foto']) ?>" alt="Foto" width="80" class="img-thumbnail">
                     <?php else: ?>
                         <span class="text-muted">Tidak ada foto</span>
                     <?php endif; ?>

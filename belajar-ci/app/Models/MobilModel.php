@@ -12,6 +12,6 @@ class MobilModel extends Model
     protected $returnType     = 'array';     // Kembalikan dalam bentuk array
     protected $useSoftDeletes = false;
 
-    protected $allowedFields = ['nama_mobil', 'merk', 'nopol' , 'harga_sewa', 'status' , 'gambar'];
+    protected $allowedFields = ['nama_mobil', 'merk', 'nopol' , 'harga_sewa', 'status' , 'foto'];
 
 }
